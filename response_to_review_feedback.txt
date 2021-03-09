@@ -1,0 +1,7 @@
+Team 2 response to feedback: 80/100
+
+Below are some comments about your response to the code review and peer review:
+
+- addressed comments about code duplication in studentcontroller and instructorcontroller by just making one uploadcontroller
+- a lot of the comments were not addressed: there is still a lack of documentation in the tests, the fileWalk method is still too long, some files are still in weird unexplained places in the directories (PlagiarismDetectorApplication is one)
+- overall, not a great job addressing the comments

@@ -1,0 +1,12 @@
+Group 2 -- 85/100
+
+Overall, the presentation was satisfactory, though there was room for improvement. Below are some specific comments/feedback:
+
+Pros:
+- the demo was nice, showing side by side comparison (without highlighting)
+
+Cons:
+- far too much time was spent on infrastructure and system architecture, and the team got caught up in low-level system details, similar to what happened in the earlier presentation. This was not the point of the project or the presentation.
+- similarly, the DB and UI and all the debugging issues are not central to the project and took time away from more interesting issues
+- a better use of your time would have been to spend more time on explaining the winnowing algorithm using an example, and explaining to the audience what its limitations are
+- it would have been useful to include examples in the presentation of situations where the technique worked well, and where it did not

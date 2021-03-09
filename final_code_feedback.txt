@@ -1,0 +1,21 @@
+Team 2: 82/100
+
+Below are some comments, both good and bad, about the code base in the repo's master branch.
+
+- some maven junk files committed, these should be in the .gitignore
+- nice readme, but it should include information about the directory structure and what code is where
+- minor point, but the C++ file support should include .hpp, not just .h
+- should have made better use of the .gitignore, there's a lot of junk in the repo 
+- decent documentation, javadocs look good 
+- the algorithm is poorly explained in the code, if you used an existing algorithm directly or for inspiration it should be cited here, and you should explain more how it works
+- the algorithm works over hashes of the atom nodes of the AST, which means there is context lost -- there is no difference between a single line being flagged as plagiarizes (which could just be by chance), or a contiguous block. this means your algorithm has the potential for a high false positive rate.
+- algorithm is very inefficient, since it compares every line pairwise
+- good job getting and displaying the correspondence between plagiarized lines 
+- you have a lot of interfaces that you only implement once, not sure if you were going for a more general design and just never ended up using it (for example, you have only one algorithm, but still have an algorithm interface, and same thing for the uploadcontroller -- for this second one, i'm not sure why you think there should be an interface for it since it doesn't seem like something that necessarily needs to be generalized, so you just end up with a bunch of noise in the inheritance hierarchy)
+- overall, java naming conventions were followed
+- more noise in the repo with the ANTLR generated files
+- definitely not enough documentation in the tests
+- unclear how the algorithm would work if a line was plagiarzed multiple times, it looks like the map will just store one entry (corresponding to the last instance in which it was plagiarized)
+- seems like pretty good test coverage
+- commit messages don't seem too informative
+- no use of github issues or anything, and there's 13 branches; some of them were never merged even one named UI_final -- this looks like a bit of a mess to be honest

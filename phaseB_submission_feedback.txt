@@ -1,0 +1,6 @@
+Score: 85
+- including some functionality for highlighting relevant sections of code would be nice
+- well done doing a thorough job looking up and explaining the infrastructure for the system
+- UML sequence diagram is useful in illustrating the communications/interactions between system components
+- but, we expected a UML class diagram that described how the system components interact with each other
+- we did not see any Java interfaces for your main system components

@@ -1,0 +1,235 @@
+- Documentation:
+  - I like that a help file is included with useful links to help team members understand the code.
+  - I like that citations are included where necessary.
+  - Many classes under the plagiarismdetector package are missing method documentation. Consider adding block
+    comments describing what these methods do so that the whole team clearly understands their purpose.
+- Project Organization:
+  - The project structure looks great. The files are very organized and feel like they're in the right place.
+- Development:
+  - Consider expanding on the driver with a draft of how the various objects will be used in the context of the 
+    application (I am unfamiliar with the API used by this team, so this functionality may be implicit somewhere).
+  - Stubs could be used to help create tests ahead of time (there are significantly more files than there are tests).
+- Testing:
+  - Consider adding more tests for better project coverage.
+  - Consider using more descriptive test names in the test class FileHandlerTest (currently suffixed with a number).
+  - Good use of TODO to keep track of additional tests to be added later.
+- Algorithm:
+  - Consider beginning the development of the core algorithm(s) which will detect the plagiarism; this is taking my group
+    a lot of time to iron out and should be started as soon as possible.
+    
+    
+Format:     
+-- Location 
+-- Line 
+-- Type 
+-- Reason
+
+-- plagarismdetector/api/StudentRESTController.java
+-- 51 // TODO: replace null with custom exception 
+-- TODO
+-- Rather than write a todo for simple change, it’s recommended to just fix it, otherwise it will be forgotten
+
+-- plagarismdetector/controller/InstructorController.java
+-- 17 @Controller // This means that this class is a Controller
+-- Unnecessary comment
+-- Don't need to comment on this
+
+-- plagarismdetector/controller/InstructorController.java
+-- 30 InstructorEntity n = new InstructorEntity();
+-- Variable name too vague
+-- Choose a better variable name example: instructor
+
+-- plagarismdetector/dao/InstructorRESTDataAccessService.java 
+-- 21 
+-- Space 
+-- Unnecessary line white spacing
+
+-- plagarismdetector/model/AbstractUser.java 
+-- 64,58 
+-- Space
+-- Unnecessary line white spacing
+
+
+
+File: PlagiarismDetectorApplication.java
+- No documentation
+- This looks like a controller but it's not in the controller directory, so I'm unsure of the class's purpose.
+
+File: FileHandler.java
+- FileWalk method is very long, could probably be refactored into smaller methods
+
+Directory: Util
+- The file handler, an enum for error messages, and the antlr files are all in this directory, but these feel like unrelated components 
+
+File: InstructorService
+- Very little documentation
+- This appears to be methods for handling user accounts for instructors but I don't see what purpose they serve in the overall design
+
+File: StudentService
+- Same as above but for students
+
+File: AbstractUser
+- A lot of methods in this class
+- Some methods are un-documented
+
+Directory: Model
+- The name of this directory (model) may be too vague for describing what is within it, specifically, a model for handling account information. I had initially clicked here looking for the detector code and was confused by what I found
+
+Directory: Entity
+- Neither class has much documentation
+- Again, the directory name is confusing, I'm not sure I understand what these classes are doing
+
+Directory: Dao
+- All classes lack documentation
+- I'm not sure what "dao" means but that may just be me
+
+Directory: api
+- Documentation missing form all classes
+
+General: Your test files seem to be in a directory in a strange place
+- No documentation in any of the test files
+
+
+
+Format: 
+-- Location
+-- Problem type
+-- Problem description
+
+-- CS5500_Team2_HW5/Project_src/src/main/java/edu/northeastern/plagarismdetector/api/InstructorRestController,StudentRestController
+-- Lack of documentation
+- -It would be nice to have some comments explaining what these two classes do and why they’re different instead of one class
+
+-- InstructorRestController, StudentRestController
+-- Code duplication 
+-- The student and instructor classes are almost exactly the same— could it be possible to use a design pattern/interface to make code more DRY? This could help in case another user class needed to be added (ex. TAs)
+
+-- CS5500_Team2_HW5/Project_src/src/main/java/edu/northeastern/plagarismdetector/controller/StudentController,InstructorController
+-- Code duplication 
+-- Same as above, seems like using an interface could help code be more extensible 
+
+-- StudentController,InstructorController
+-- Lack of documentation
+-- It would be nice to have some comments explaining what these two classes do and why they’re different instead of one class
+
+-- StudentController 
+-- Lack of documentation
+-- No Javadoc for any methods?
+
+-- InstructorController 
+-- Lack of documentation
+-- No Javadoc for any methods?
+
+-- CS5500_Team2_HW5/Project_src/src/main/java/edu/northeastern/plagarismdetector/daoIUserDAO 
+-- Lack of documentation
+-- No comments explaining what the interface does or what the interface methods do
+
+-- InstructorRESTDataAccessService,StudentRESTDataAccessService
+-- Code Duplication 
+-- Lots of code duplication:
+    - selectAllUsers
+    - selectUserByID
+    - deleteUserById
+   These could be implemented in an Abstract Class
+   
+-- InstructorRESTDataAccessService,StudentRESTDataAccessService
+-- Lack of documentation
+-- No class comments
+
+-- CS5500_Team2_HW5/Project_src/src/main/java/edu/northeastern/plagarismdetector/entity/InstructorEntity,StudentEntity
+-- Lack of documentation
+-- No class comments or Javadoc for methods
+
+-- InstructorEntity,StudentEntity
+-- Code duplication 
+-- There’s a lot of code duplication across these two classes, might be useful to use an interface and/or abstract class to prevent code duplication
+
+-- CS5500_Team2_HW5/Project_src/src/main/java/edu/northeastern/plagarismdetector/modelAbstractUser 
+-- Documentation 
+-- Missing @Override tags
+
+-- CS5500_Team2_HW5/Project_src/src/main/java/edu/northeastern/plagarismdetector/serviceInstructorService,StudentService
+-- Lack of documentation
+-- No class comments or Javadoc for methods
+
+
+
+Tests/PlagarismDetectorApplicationTests:
+Unused class. There are no tests or comments explaining its use.
+Lack of tests for classes in the project. Only a few cases have been tested and most of them are
+just invalid input test conditions.
+
+Src/plagiarismdetector/api/InstructorRESTController.java
+Lack of comments for all methods and the class.
+
+Src/plagiarismdetector/api/InstructorRESTController.java
+Lack of comments for all methods and the class.
+
+Src/plagiarismdetector/controller/InstructorController.java
+Line 30 has a variable called “n” which is supposed to represent an InstructorEntity. The
+variable name should be more informative.
+
+Src/plagiarismdetector/controller/StudentController.java
+Line 31 has a variable called “n” which is supposed to represent a StudentEntity. The variable
+name should be more informative.
+
+Src/plagiarismdetector/dao/InstructorRESTDataAccessService.java
+• The class name seems excessively long
+• Line 19 has a variable called DB. It’s not clear as to what this variable represents.
+• Lack of comments in this file.
+
+Src/plagiarismdetector/dao/IUserDAO.java
+Lack of comments for all methods
+
+Src/plagiarismdetector/dao/StudentRESTDataAccessService.java
+• The class name seems excessively long
+• Line 20 has a variable called DB. It’s not clear as to what this variable represents.
+• Lack of comments in this file.
+
+Src/plagiarismdetector/entity
+Lack of documentation for both entity classes
+
+Src/plagiarismdetector/model/Instructor
+Lack of getters and setters for this class
+
+Src/plagiarismdetector/service
+Lack of comments for both service classes
+
+Folder structure:
+• Resources contains a random index.html file. It’s not clear what this class is meant for or
+whether it is to be deleted.
+
+
+
+
+- Don't forget to write your readme
+
+- In many of your tests, you are testing invalid input and try/catching the exceptions you expect to throw by asserting equals on the message you throw. Instead, it might be better to declare the test as expecting an exception, and running the test to throw that exception, like so: 
+	@Test(expected = IOException.class)  
+
+- I'd recommend either naming your tests something more specific, or commenting them. TestInvalidPath1, 2, 3, etc. is not specific enough. 
+
+- There is very little commenting in some classes. It's very difficult to understand a technology I've never seen without any comments. I can't offer much in the way of feedback on your spring framework and database stuff. What is Dao? What is entity? What is Hibernate or bean? Your code is not self explanatory, you can't assume that someone else is going to understand it. 
+
+- If you have a lot of code without comments, and you only reference web pages that you say you adapted the code from, then it's hard to not assume you may not understand it either. 
+
+- In your controllers, you have code blocks that are indented 12 times. I'd recommend using some automatic code styler to clean up your files.  
+
+- your model package contains the classes for defining users and instructors, it seems like that may belong in its own package. If you're implementing traditional MVC architecture, I would include a separate model class that describes the data structures/format, as well as the methods to access and operate upon them
+
+- In model: you define an IUser interface, an abstract user, and a student and instructor which both extend the abstract user. But, the student and instructor have no unique code, all they do is call super. The design here should be rethought. 
+
+- Some of your variable names are not up to par. For example, in the controllers, you define a variable "n". You also use "DB" throughout StudentRESTDataAccessService. Always use more descriptive variable names. 
+
+
+
+
+- Write more tests.
+- Implement some algorithms
+- More comments would be helpful.
+
+- Generally it seems like only Spring MVC has been set up, which is good! From what I've seen it looks like more comments would be useful so that someone reading your code (who doesn't even know what SpringMVC is) could know what they're looking at. Javadocs above interfaces are a great location to describe why the interface exists and what it's used for.
+
+Your methods and variables look like they are named well.
+
+Good luck with finishing the rest of the project!

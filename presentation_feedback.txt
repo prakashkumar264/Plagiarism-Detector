@@ -1,0 +1,6 @@
+Group 2 ---- 85
+- UI: similarities reported as comments; adding visual diff view would be helpful
+- too much focus on architectural aspects, use of frameworks, etc
+- class diagram does not show the breakdown of the system into components (as in your sequence diagram), or how components interact with each other
+- reasonable choice of algorithms. it would have been useful to reflect this in your design
+- handling of questions was ok, but not a very clear answer to question about what major components the system will consist of
